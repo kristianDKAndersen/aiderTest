@@ -10,7 +10,9 @@
     "stylelint": "stylelint '**/*.{css,scss}'"
   },
   "dependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "pinia": "^2.0.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
