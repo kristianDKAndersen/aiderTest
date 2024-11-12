@@ -1,0 +1,21 @@
+{
+  "name": "my-vite-project",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write .",
+    "stylelint": "stylelint '**/*.{css,scss}'"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0"
+  }
+}
