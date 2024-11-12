@@ -9,6 +9,9 @@
     "format": "prettier --write .",
     "stylelint": "stylelint '**/*.{css,scss}'"
   },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
     "eslint": "^8.0.0",
     "husky": "^8.0.0",
