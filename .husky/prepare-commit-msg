@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Prompt for task ID
+echo "Enter task ID (e.g., DK-1234):"
+read TASK_ID
+
+# Prepend task ID to commit message
+if [ -n "$TASK_ID" ]; then
+  sed -i.bak -e "1s/^/$TASK_ID /" "$1"
+fi
