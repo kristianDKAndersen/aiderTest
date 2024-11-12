@@ -1,11 +1,23 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Prompt for task ID
-echo "Enter task ID (e.g., DK-1234):"
-read task_id
+# Source the .env file if it exists
+if [ -f .env ]; then
+    # Export all variables from .env, ignoring comments
+    export $(cat .env | grep -v '^#' | xargs)
+fi
 
-# Prepend the task ID to the commit message
-if [ -n "$task_id" ]; then
-  sed -i.bak -e "1s/^/$task_id /" "$1"
+# Get the commit message file path
+COMMIT_MSG_FILE=$1
+
+# Check if TASK_ID environment variable exists
+if [ -n "$TASK_ID" ]; then
+    # Get original message
+    TEMP=$(cat "$COMMIT_MSG_FILE")
+    # Write new message with task ID
+    echo "$TASK_ID: $TEMP" > "$COMMIT_MSG_FILE"
+else
+    echo "Error: TASK_ID environment variable is not set"
+    echo "Please set TASK_ID in your .env file"
+    exit 1
 fi
