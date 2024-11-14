@@ -7,9 +7,8 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -23,6 +22,9 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/require-default-prop': 'off',
+    // Relaxed TypeScript rules since it's only used for data fetching
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
   },
   ignorePatterns: [
     'node_modules/**',
@@ -30,5 +32,21 @@ module.exports = {
     '.storybook/**',
     '*.config.js',
     '*.config.ts',
+  ],
+  overrides: [
+    {
+      // Apply stricter rules only to TypeScript files
+      files: ['*.ts'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'warn',
+      },
+    },
+    {
+      // Normal rules for JavaScript files
+      files: ['*.js', '*.vue'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
   ],
 };
