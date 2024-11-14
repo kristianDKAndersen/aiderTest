@@ -1,4 +1,4 @@
-# Vue 3 + JavaScript sprinkle with TypeScript Starter Template
+# Vue 3 + JavaScript sprinkled with TypeScript Boilerplate
 
 A modern Vue.js starter template with TypeScript support, featuring comprehensive tooling for development, testing, and code quality.
 
@@ -101,11 +101,11 @@ your-project/
 ├── src/                # Source code
 ├──── components
 ├──── composable
-├──── public/
+├──── public/           # Static assets
 ├──── router
 ├──── stores
 ├──── stories
 ├──── styles
-├──── views             # Static assets
+├──── views
 └── package.json        # Project configuration
 ```
