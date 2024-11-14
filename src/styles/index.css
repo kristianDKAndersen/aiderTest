@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*CSS RESET*/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value 
+   Set the sizing of an element to include it's border */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset margin padding to 0 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Makes the body element full screen 
+     and normal scrolling smooth */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  @apply bg-SG_Blue;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}

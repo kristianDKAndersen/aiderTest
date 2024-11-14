@@ -5,7 +5,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'formbuilder',
-      component: () => import('../views/FormBuilder.vue'),
+      component: () => import('../views/FrontPage.vue'),
     },
   ],
 });

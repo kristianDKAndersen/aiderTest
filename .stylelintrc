@@ -1,33 +1,34 @@
 {
-"extends": [
-  "stylelint-config-standard",
-  "stylelint-config-recommended-vue",
-  "stylelint-config-tailwindcss"
-],
-"ignoreFiles": [
-  "src/stories/**/*",
-  ".storybook/**/*",
-  "node_modules/**/*"
-],
-"rules": {
-  "indentation": 2,
-  "string-quotes": "single",
-  "no-duplicate-selectors": true,
-  "selector-class-pattern": null,
-  "at-rule-no-unknown": [
-    true,
-    {
-      "ignoreAtRules": [
-        "tailwind",
-        "apply",
-        "variants",
-        "responsive",
-        "screen",
-        "layer"
-      ]
-    }
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-vue",
+    "stylelint-config-tailwindcss"
   ],
-  "declaration-block-trailing-semicolon": null,
-  "no-descending-specificity": null
-}
+  "ignoreFiles": [
+    "src/stories/**/*",
+    ".storybook/**/*",
+    "node_modules/**/*"
+  ],
+  "customSyntax": "postcss-html",
+  "fix": true,
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "layer"
+        ]
+      }
+    ],
+    "no-descending-specificity": null,
+    "declaration-block-trailing-semicolon": "always",
+    "string-quotes": "single",
+    "indentation": 2
+  }
 }
