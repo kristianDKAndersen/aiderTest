@@ -29,6 +29,7 @@ module.exports = {
   ignorePatterns: [
     'node_modules/**',
     'dist/**',
+    'src/stories/**',
     '.storybook/**',
     '*.config.js',
     '*.config.ts',

@@ -4,20 +4,19 @@
 
 :root {
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*CSS RESET*/
+/* CSS RESET */
+
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
-*:where(
-    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
-  ) {
+*:where(:not(html, iframe, canvas, img, svg, video, audio, svg *, symbol *)) {
   all: unset;
   display: revert;
 }
@@ -42,7 +41,13 @@ body,
 html {
   width: 100%;
   height: 100%;
+
   @apply bg-SG_Blue;
+
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+
+.test {
+  color: red; /* Double semicolon - this should trigger an error */
 }
